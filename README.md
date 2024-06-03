@@ -39,23 +39,11 @@ L'application suit une architecture MVC (Modèle-Vue-Contrôleur). Les principal
 - **Contrôleur** : Logique de gestion des interactions utilisateur et des mises à jour du modèle.
 
 ## Installation
-### Prérequis
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
 
 ### Étapes
 1. Clonez le dépôt
     ```bash
     git clone https://github.com/oussamaaatifi1/MovieSeries_App.git
-    ```
-2. Installez les dépendances
-    ```bash
-    cd MovieSeries_App
-    npm install
-    ```
-3. Démarrez l'application
-    ```bash
-    npm start
     ```
 
 ## Utilisation
