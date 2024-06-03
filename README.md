@@ -16,15 +16,15 @@
 - [Licence](#licence)
 
 ## Introduction
-Cette application permet de gérer des films et des séries, ainsi que les utilisateurs qui peuvent créer des listes de favoris. Les administrateurs peuvent ajouter, modifier, et supprimer des films et des séries. Les utilisateurs peuvent s'inscrire, se connecter, et ajouter des films et des séries à leurs favoris.
+Ceci est une application de gestion des films et des séries, permettant aux administrateurs d'ajouter, modifier et supprimer des films et des séries, et aux utilisateurs de consulter les listes, les détails et d'ajouter des éléments à leurs favoris.
 
 ## Fonctionnalités
 ### Administrateurs
 - Connexion et déconnexion
 - Inscription de nouveaux administrateurs
 - Réinitialisation du mot de passe
-- Ajout, modification, suppression de films
-- Ajout, modification, suppression de séries
+- Ajout, modification et suppression de films
+- Ajout, modification et suppression de séries
 
 ### Utilisateurs
 - Inscription et connexion
@@ -33,22 +33,24 @@ Cette application permet de gérer des films et des séries, ainsi que les utili
 - Consultation des détails des films et séries
 
 ## Architecture
-L'application est construite avec une architecture MVC (Modèle-Vue-Contrôleur). Voici les principales composantes :
+L'application suit une architecture MVC (Modèle-Vue-Contrôleur). Les principales composantes sont :
 - **Modèle** : Représente les entités de l'application (Film, Série, Utilisateur, Administrateur).
-- **Vue** : Interface utilisateur pour l'interaction avec l'application.
+- **Vue** : Interface utilisateur pour interagir avec l'application.
 - **Contrôleur** : Logique de gestion des interactions utilisateur et des mises à jour du modèle.
 
 ## Installation
-
+### Prérequis
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
 ### Étapes
 1. Clonez le dépôt
     ```bash
-    git clone [https://github.com/votre-utilisateur/gestion-films-series.git](https://github.com/oussamaaatifi1/MovieSeries_App)
+    git clone https://github.com/oussamaaatifi1/MovieSeries_App.git
     ```
 2. Installez les dépendances
     ```bash
-    cd gestion-films-series
+    cd MovieSeries_App
     npm install
     ```
 3. Démarrez l'application
