@@ -52,7 +52,8 @@ Une fois l'application démarrée, ouvrez votre navigateur et accédez à `http:
 ## Diagrammes UML
 ### Diagramme de Cas d'Utilisation![Capture d'écran 2024-06-06 120303]
 
-![Diagramme de Cas d'Utilisation](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/ccda489d-f29f-426b-8e63-109ec)
+![Diagramme de Cas d'Utilisation](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/06509f10-3d29-4b5c-a433-a47b36774abd)
+
 
 ### Diagramme de Classe
 ![Diagramme de Classe](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/fec44dd5-e7b2-4cbe-8b91-a178d899fab5)
