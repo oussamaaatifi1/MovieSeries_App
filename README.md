@@ -50,14 +50,15 @@ L'application suit une architecture MVC (Modèle-Vue-Contrôleur). Les principal
 Une fois l'application démarrée, ouvrez votre navigateur et accédez à `http://localhost:3000`. Vous pouvez vous inscrire en tant qu'utilisateur ou vous connecter en tant qu'administrateur pour accéder aux fonctionnalités de gestion.
 
 ## Diagrammes UML
-### Diagramme de Cas d'Utilisation
+### Diagramme de Cas d'Utilisation![Capture d'écran 2024-06-06 120303]
+
 ![Diagramme de Cas d'Utilisation](./diagrams/use_case_diagram.png)
 
 ### Diagramme de Classe
 ![Diagramme de Classe](./diagrams/class_diagram.png)
 
 ### Diagramme de Séquence
-![Diagramme de Séquence](./diagrams/sequence_diagram.png)
+![Diagramme de Séquence](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/6d51a5c5-2142-4e3c-9567-2304ca1957ec)
 
 ## Contribuer
 Les contributions sont les bienvenues ! Veuillez suivre les étapes suivantes pour contribuer :
