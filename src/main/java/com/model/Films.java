@@ -3,7 +3,9 @@ package com.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Films")
@@ -27,6 +29,12 @@ public class Films {
     @Column(name = "note")
     private int note;
 
+//    @OneToMany(mappedBy = "series")
+//    private List<Favorite> favoris;
+
+    @ManyToOne
+    @JoinColumn(name = "id_favorite")
+    private Favorite favorite;
 
     public Films(String titre, String description, Date dateSortie, int duree, String genre, String realisateur, int note) {
         this.titre = titre;

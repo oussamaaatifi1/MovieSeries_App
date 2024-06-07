@@ -19,6 +19,9 @@ public class Users {
     @Column(name = "nom")
     private String nom;
 
+    @OneToOne(mappedBy = "user")
+    private Favorite favoris;
+
     public Users() {
     }
 
@@ -26,6 +29,18 @@ public class Users {
         this.email = email;
         this.password = password;
         this.nom = nom;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public Favorite getFavoris() {
+        return favoris;
+    }
+
+    public void setFavoris(Favorite favoris) {
+        this.favoris = favoris;
     }
 
     public int getId_user() {

@@ -2,6 +2,7 @@ package com.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Series")
@@ -10,7 +11,7 @@ public class Series {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_serie")
-    private int id_serie;
+    private Long id_serie;
 
     @Column(name = "titre")
     private String titre;
@@ -36,7 +37,11 @@ public class Series {
     @Column(name = "note")
     private int note;
 
-    public Series(int id_serie, String titre, String description, Date dateDebut, Date dateFin, int nbSaison, String genre, String createur, int note) {
+    @ManyToOne
+    @JoinColumn(name = "id_favorite")
+    private Favorite favorite;
+
+    public Series(Long id_serie, String titre, String description, Date dateDebut, Date dateFin, int nbSaison, String genre, String createur, int note) {
         this.id_serie = id_serie;
         this.titre = titre;
         this.description = description;
@@ -59,11 +64,18 @@ public class Series {
         this.note = note;
     }
 
-    public int getId_serie() {
+    public Series() {
+
+    }
+
+    public Series(Object o, String name, String genre) {
+    }
+
+    public Long getId_serie() {
         return id_serie;
     }
 
-    public void setId_serie(int id_serie) {
+    public void setId_serie(Long id_serie) {
         this.id_serie = id_serie;
     }
 
