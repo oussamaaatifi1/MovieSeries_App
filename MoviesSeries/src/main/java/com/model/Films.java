@@ -4,6 +4,7 @@ package com.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "Films")
@@ -26,19 +27,28 @@ public class Films {
     private  String realisateur;
     @Column(name = "note")
     private int note;
+    
+    @OneToMany(mappedBy="Films")
+    private Set<Favorite> favoris;
 
 
-    public Films(String titre, String description, Date dateSortie, int duree, String genre, String realisateur, int note) {
-        this.titre = titre;
-        this.description = description;
-        this.dateSortie = dateSortie;
-        this.duree = duree;
-        this.genre = genre;
-        this.realisateur = realisateur;
-        this.note = note;
-    }
 
-    public Films() {
+    public Films(int id_film, String titre, String description, Date dateSortie, int duree, String genre,
+			String realisateur, int note, Set<Favorite> favoris) {
+		super();
+		this.id_film = id_film;
+		this.titre = titre;
+		this.description = description;
+		this.dateSortie = dateSortie;
+		this.duree = duree;
+		this.genre = genre;
+		this.realisateur = realisateur;
+		this.note = note;
+		this.favoris = favoris;
+	}
+
+
+	public Films() {
 
     }
 
@@ -105,4 +115,16 @@ public class Films {
     public void setNote(int note) {
         this.note = note;
     }
+
+
+	public Set<Favorite> getFavoris() {
+		return favoris;
+	}
+
+
+	public void setFavoris(Set<Favorite> favoris) {
+		this.favoris = favoris;
+	}
+    
+    
 }

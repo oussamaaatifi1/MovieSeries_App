@@ -13,17 +13,24 @@ public class Favorite {
     @Column(name = "id_user")
     private int id_user;
 
-    @Column(name = "id_film")
-    private int id_film;
 
     @Column(name = "id_serie")
     private int id_serie;
+    
+    
+    @ManyToOne
+    @JoinColumn(name="id_film", nullable=false)
+    private Films film;
+    
+    public Favorite(int id_favorite, int id_user, int id_serie, Films film) {
+		super();
+		this.id_favorite = id_favorite;
+		this.id_user = id_user;
+		this.id_serie = id_serie;
+		this.film = film;
+	}
 
-    public Favorite(int id_user, int id_film, int id_serie) {
-        this.id_user = id_user;
-        this.id_film = id_film;
-        this.id_serie = id_serie;
-    }
+	
 
     public Favorite() {
 
@@ -45,15 +52,17 @@ public class Favorite {
         this.id_user = id_user;
     }
 
-    public int getId_film() {
-        return id_film;
-    }
+    
 
-    public void setId_film(int id_film) {
-        this.id_film = id_film;
-    }
+    public Films getFilm() {
+		return film;
+	}
 
-    public int getId_serie() {
+	public void setFilm(Films film) {
+		this.film = film;
+	}
+
+	public int getId_serie() {
         return id_serie;
     }
 
