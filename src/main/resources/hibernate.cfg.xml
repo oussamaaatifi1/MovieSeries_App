@@ -5,25 +5,19 @@
 
 <hibernate-configuration>
     <session-factory>
-        <!-- Database connection properties -->
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MoviesSeries</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">admin</property>
-
-        <!-- Other Hibernate properties -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
 
-        <!-- Mapping files or annotated classes -->
-        <!-- Add your entity classes or mapping files here -->
-        <mapping class="com.model.Admin"/>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping class="com.model.Series"/>
         <mapping class="com.model.Favorite"/>
         <mapping class="com.model.Films"/>
-        <mapping class="com.model.Moderateur"/>
-        <mapping class="com.model.Series"/>
         <mapping class="com.model.Users"/>
     </session-factory>
 </hibernate-configuration>

@@ -36,7 +36,7 @@ public class Main {
             session.save(series);
 
             // Create and save Favorite object
-            Favorite favorite = new Favorite(users.getId_user(), film.getId_film(), series.getId_serie());
+            Favorite favorite = new Favorite();
             session.save(favorite);
 
             // Commit the transaction
