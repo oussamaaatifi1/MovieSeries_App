@@ -56,7 +56,8 @@ Une fois l'application démarrée, ouvrez votre navigateur et accédez à `http:
 
 
 ### Diagramme de Classe
-![Diagramme de Classe](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/fec44dd5-e7b2-4cbe-8b91-a178d899fab5)
+![Diagramme de Classe](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/d4f45542-3a8c-4741-86bd-75ac20054f8b)
+
 
 ### Diagramme de Séquence
 ![Diagramme de Séquence](https://github.com/oussamaaatifi1/MovieSeries_App/assets/72675402/6d51a5c5-2142-4e3c-9567-2304ca1957ec)
