@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+# Ignorer le fichier hibernate.cfg.xml
+hibernate.cfg.xml
 
 ### Eclipse ###
 .apt_generated
