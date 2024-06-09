@@ -8,7 +8,7 @@
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MoviesSeries</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.password">sanaazbadi</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
@@ -19,5 +19,7 @@
         <mapping class="com.model.Favorite"/>
         <mapping class="com.model.Films"/>
         <mapping class="com.model.Users"/>
+        <mapping class="com.model.Admin"/>
+        <mapping class="com.model.Moderateur"/>
     </session-factory>
 </hibernate-configuration>
