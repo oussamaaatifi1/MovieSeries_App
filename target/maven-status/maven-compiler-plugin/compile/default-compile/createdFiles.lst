@@ -1,0 +1,11 @@
+com\model\Films.class
+com\model\Moderateur.class
+com\model\Users.class
+com\model\Favorite.class
+com\dao\SeriesDaoImpl.class
+com\model\Main.class
+com\service\SeriesServiceImpl.class
+com\configHibernate\HibernateUtil.class
+com\model\Series.class
+com\controller\SeriesController.class
+com\model\Admin.class
