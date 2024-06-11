@@ -19,5 +19,6 @@
         <mapping class="com.model.Favorite"/>
         <mapping class="com.model.Films"/>
         <mapping class="com.model.Users"/>
+
     </session-factory>
 </hibernate-configuration>

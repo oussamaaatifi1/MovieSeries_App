@@ -1,42 +1,84 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.model.Series" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>List Series</title>
+  <title>Liste des Films</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .actions {
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
-<h2>List of Series</h2>
-<table border="1">
+<h1>Liste des Films</h1>
+<table>
   <thead>
   <tr>
-    <th>Title</th>
+    <th>Titre</th>
     <th>Description</th>
-    <th>Start Date</th>
-    <th>End Date</th>
-    <th>Number of Seasons</th>
+    <th>Date de Sortie</th>
+    <th>Durée</th>
     <th>Genre</th>
-    <th>Creator</th>
-    <th>Rating</th>
+    <th>Réalisateur</th>
+    <th>Acteurs</th>
+    <th>Note</th>
+    <th>Image</th>
+    <th>Actions</th>
   </tr>
   </thead>
   <tbody>
-  <c:forEach items="${seriesList}" var="series">
-    <tr>
-      <td>${series.titre}</td>
-      <td>${series.description}</td>
-      <td>${series.dateDebut}</td>
-      <td>${series.dateFin}</td>
-      <td>${series.nbSaison}</td>
-      <td>${series.genre}</td>
-      <td>${series.createur}</td>
-      <td>${series.note}</td>
-    </tr>
-  </c:forEach>
+  <%
+    List<Series> series = (List<Series>) request.getAttribute("movies");
+    if (series != null) {
+      for (Series movie : series) {
+  %>
+  <tr>
+    <td><%= movie.getTitre() %></td>
+    <td><%= movie.getDescription() %></td>
+    <td><%= movie.getDateDebut() %></td>
+    <td><%= movie.getDateFin() %></td>
+    <td><%= movie.getNbSaison() %></td>
+    <td><%= movie.getGenre() %></td>
+    <td><%= movie.getCreateur() %></td>
+    <td><%= movie.getNote() %></td>
+    <td class="actions">
+      <a href="/MovieApp_war_exploded/movies/edit/<%= series.getId() %>">Modifier</a>
+      <input type="hidden" name="id" value="<%= movie.getId() %>">
+      <button type="submit">Supprimer</button>
+    </form>
+    </td>
+  </tr>
+  <%
+    }
+  } else {
+  %>
+  <tr>
+    <td colspan="10">Aucun film disponible</td>
+  </tr>
+  <%
+    }
+  %>
   </tbody>
 </table>
-
-<a href="/api/series">Go to Series API</a>
-
+<br>
+<a href="create">Ajouter un nouveau film</a> <!-- Lien mis à jour -->
 </body>
 </html>

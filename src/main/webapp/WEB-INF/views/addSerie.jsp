@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from flixtv.volkovdesign.com/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jun 2024 14:23:03 GMT -->
+<!-- Mirrored from flixtv.volkovdesign.com/admin/add-item.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jun 2024 14:23:03 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -506,5 +506,5 @@
 <script src="js/admin.js"></script>
 </body>
 
-<!-- Mirrored from flixtv.volkovdesign.com/admin/add-item.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jun 2024 14:23:03 GMT -->
+<!-- Mirrored from flixtv.volkovdesign.com/admin/add-item.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jun 2024 14:23:03 GMT -->
 </html>

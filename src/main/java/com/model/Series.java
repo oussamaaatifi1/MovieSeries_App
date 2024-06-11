@@ -1,11 +1,14 @@
 package com.model;
 
+import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Series")
+@Table(name = "series")
 public class Series {
 
     @Id

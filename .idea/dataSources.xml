@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MoviesSeries@localhost" uuid="70b35663-daa0-4488-b60b-7220e269f338">
+    <data-source source="LOCAL" name="MoviesSeries@localhost" uuid="48afcede-da20-4914-9aaf-2706123e71d3">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -9,18 +9,28 @@
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
-        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="1f2985e1-67eb-46aa-b147-f6dc3f9bc018">
+    <data-source source="LOCAL" name="dataSource" uuid="1a40b293-2eec-4dd2-b6ba-71f4c9fc87cd">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>spring
+
+C:/Users/user/Desktop/StramingApp/MovieSeries_App/src/main/java/ApplicationContext.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/MoviesSeries</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="2d701c1c-5a2b-4dad-8b8e-cf104da0c1e9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>Hibernate
 
-C:/Users/user/Desktop/MoviesSeries/MovieSeries_App/MoviesSeries/src/main/resources/hibernate.cfg.xml</remarks>
+C:/Users/user/Desktop/StramingApp/MovieSeries_App/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/MoviesSeries</jdbc-url>
       <jdbc-additional-properties>
