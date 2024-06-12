@@ -5,80 +5,126 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Liste des Films</title>
+  <title>Liste des Series</title>
   <style>
-    table {
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #f5ba13;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
       width: 100%;
-      border-collapse: collapse;
+      height: auto;
+      border-radius: 10px;
     }
-    table, th, td {
-      border: 1px solid black;
+    .card h2 {
+      margin-top: 10px;
+      font-size: 1.5em;
+      color: #f5ba13;
     }
-    th, td {
+    .card p {
+      margin: 10px 0;
+    }
+    .card .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    .card .actions a, .card .actions button {
+      background-color: #f5ba13;
+      color: #121212;
+      border: none;
       padding: 10px;
-      text-align: left;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.2s;
     }
-    img {
-      max-width: 100px;
-      max-height: 100px;
+    .card .actions button {
+      cursor: pointer;
     }
-    .actions {
-      white-space: nowrap;
+    .card .actions a:hover, .card .actions button:hover {
+      background-color: #e0a800;
+    }
+    .add-button {
+      display: inline-block;
+      margin: 20px auto;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      width: fit-content;
+      transition: background-color 0.2s;
+    }
+    .add-button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
 <h1>Liste des Films</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Titre</th>
-    <th>Description</th>
-    <th>Date de Sortie</th>
-    <th>Durée</th>
-    <th>Genre</th>
-    <th>Réalisateur</th>
-    <th>Acteurs</th>
-    <th>Note</th>
-    <th>Image</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
+<div class="card-container">
   <%
-    List<Series> series = (List<Series>) request.getAttribute("movies");
-    if (series != null) {
-      for (Series movie : series) {
+    List<Series> seriess = (List<Series>) request.getAttribute("series");
+    if (seriess != null) {
+      for (Series series : seriess) {
   %>
-  <tr>
-    <td><%= movie.getTitre() %></td>
-    <td><%= movie.getDescription() %></td>
-    <td><%= movie.getDateDebut() %></td>
-    <td><%= movie.getDateFin() %></td>
-    <td><%= movie.getNbSaison() %></td>
-    <td><%= movie.getGenre() %></td>
-    <td><%= movie.getCreateur() %></td>
-    <td><%= movie.getNote() %></td>
-    <td class="actions">
-      <a href="/MovieApp_war_exploded/movies/edit/<%= series.getId() %>">Modifier</a>
-      <input type="hidden" name="id" value="<%= movie.getId() %>">
-      <button type="submit">Supprimer</button>
-    </form>
-    </td>
-  </tr>
+  <div class="card">
+    <img src="<%= series.getImages() %>" alt="<%= series.getTitre() %>">
+    <h2><%= series.getTitre() %></h2>
+    <p><strong>Description:</strong> <%= series.getDescription() %></p>
+    <p><strong>Date de Sortie:</strong> <%= series.getDateDebut() %></p>
+    <p><strong>Durée:</strong> <%= series.getDateFin() %></p>
+    <p><strong>Genre:</strong> <%= series.getGenre() %></p>
+    <p><strong>Réalisateur:</strong> <%= series.getCreateur() %></p>
+    <p><strong>Note:</strong> <%= series.getNote() %></p>
+    <div class="actions">
+      <a href="/MoviesSeries_war_exploded/admin/edit/<%= series.getId_serie() %>">Modifier</a>
+      <form action="/MoviesSeries_war_exploded/admin/deleteSerie" method="post" style="display:inline;">
+        <input type="hidden" name="id" value="<%= series.getId_serie() %>">
+        <button type="submit">Supprimer</button>
+      </form>
+      <form action="/MoviesSeries_war_exploded/admin/details/<%= series.getId_serie() %>" method="get" style="display:inline;">
+        <button type="submit">Voir Détails</button>
+      </form>
+    </div>
+  </div>
   <%
     }
   } else {
   %>
-  <tr>
-    <td colspan="10">Aucun film disponible</td>
-  </tr>
+  <p>Aucun film disponible</p>
   <%
     }
   %>
-  </tbody>
-</table>
-<br>
-<a href="create">Ajouter un nouveau film</a> <!-- Lien mis à jour -->
+</div>
+<a href="/MoviesSeries_war_exploded/admin/create" class="add-button">Ajouter un nouveau film</a>
 </body>
 </html>

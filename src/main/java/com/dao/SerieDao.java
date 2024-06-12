@@ -24,7 +24,7 @@ public class SerieDao {
         return seriesList;
     }
 
-    public Series getSerie(Long id) {
+    public Series getSerieById(Long id) {
         Session session = sessionFactory.openSession();
         Series serie = session.get(Series.class, id);
         session.close();
@@ -48,7 +48,7 @@ public class SerieDao {
         session.close();
     }
 
-    public void delete(Long id) {
+    public void deleteSerie(Long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Series serie = session.get(Series.class, id);
@@ -57,5 +57,11 @@ public class SerieDao {
         }
         transaction.commit();
         session.close();
+    }
+    public Series findById(int id) {
+        Session session = sessionFactory.openSession();
+        Series serie = session.get(Series.class, id);
+        session.close();
+        return serie;
     }
 }

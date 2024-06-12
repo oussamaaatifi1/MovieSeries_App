@@ -23,5 +23,16 @@ public class SerieService {
     public List<Series> getAllSeries() {
         return serieDao.getAllSeries();
     }
-    // Other service methods
+
+    public void supprimerSerie(Long id) {
+        serieDao.deleteSerie(id);
+    }
+
+    public Series getSerieById(Long id) {
+        return serieDao.getSerieById(id);
+    }
+
+    public Series findById(int id) {
+        return serieDao.findById(id);
+    }
 }

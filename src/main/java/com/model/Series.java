@@ -40,6 +40,9 @@ public class Series {
     @Column(name = "note")
     private int note;
 
+    private String images;
+
+
     @ManyToOne
     @JoinColumn(name = "id_favorite")
     private Favorite favorite;
@@ -73,6 +76,7 @@ public class Series {
 
     public Series(Object o, String name, String genre) {
     }
+
 
     public Long getId_serie() {
         return id_serie;
@@ -144,5 +148,13 @@ public class Series {
 
     public void setNote(int note) {
         this.note = note;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }

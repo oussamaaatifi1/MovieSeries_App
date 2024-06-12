@@ -13,9 +13,13 @@ public class HomeController {
 
     //    private TransactionServices transactionServices;
 
-    @GetMapping("/")
+    @GetMapping("/admin")
     public String showAdminIndex() {
         return "admin/index";
+    }
+    @GetMapping("/")
+    public String Home() {
+        return "home";
     }
 
     //    @PostMapping("/addTransaction")

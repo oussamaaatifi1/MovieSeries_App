@@ -49,12 +49,30 @@ public class SeriesController {
         serieService.ajouterSerie(serie);
 
         model.addAttribute("message", "Série ajoutée avec succès");
-        return "redirect:/admin/AddSeries";
+        return "redirect:/admin/list";
     }
     @GetMapping("/list")
     public String listMovies(Model model) {
         List<Series> series = serieService.getAllSeries();
         model.addAttribute("series", series);
         return "list-series";
+    }
+    @PostMapping("/deleteSerie")
+    public String deleteMovie(@RequestParam("id") Long id) {
+        serieService.supprimerSerie(id);
+        return "redirect:/admin/list";
+    }
+    @GetMapping("/edit/{id}")
+    public String showEditMovieForm(@PathVariable("id") Long id, Model model) {
+        System.out.println("Editing movie with ID: " + id);
+        Series series = serieService.getSerieById(id);
+        model.addAttribute("series", series);
+        return "editSerie"; // Nom de la vue JSP (editMovie.jsp)
+    }
+    @GetMapping("/admin/details/{id}")
+    public String getSeriesDetails(@PathVariable("id") int id, Model model) {
+        Series series = serieService.findById(id);
+        model.addAttribute("series", series);
+        return "seriesDetails";  // The name of the JSP page
     }
 }
